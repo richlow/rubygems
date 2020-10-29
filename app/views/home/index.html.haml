@@ -27,3 +27,19 @@
 
 %h1 Hello#index
 %p Find me in app/views/home/index.html.erb
+
+.fab.fa.amazon
+
+= link_to root_path, class: 'btn btn-success' do
+  .fa.fa-flag
+  Homepage
+  
+  
+= simple_form_for @course do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  = f.input :title
+  = f.label :description
+  = f.rich_text_area :description
+  /= f.submit 'Save'
+  = f.button :submit
