@@ -31,15 +31,9 @@
 .fab.fa.amazon
 
 = link_to root_path, class: 'btn btn-success' do
-  .fa.fa-flag
+  .fa.fa-flag 
   Homepage
   
+= link_to courses_path, class: 'btn btn-success' do
+  .fa.fa-book
   
-= simple_form_for @course do |f|
-  = f.error_notification
-  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
-  = f.input :title
-  = f.label :description
-  = f.rich_text_area :description
-  /= f.submit 'Save'
-  = f.button :submit
