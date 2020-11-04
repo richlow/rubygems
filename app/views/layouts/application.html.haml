@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Rubygems
     = csrf_meta_tags
@@ -12,4 +13,5 @@
     = render 'layouts/header'
     = render 'layouts/messages'
     .container
+      %p
       = yield
