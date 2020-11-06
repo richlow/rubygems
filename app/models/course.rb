@@ -6,4 +6,6 @@ class Course < ApplicationRecord
     def to_s
         title
     end
+    extend FriendlyId
+    friendly_id :title, use: :slugged
 end
