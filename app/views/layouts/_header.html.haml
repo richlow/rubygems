@@ -21,9 +21,11 @@
           = link_to users_path, class: 'nav-link' do
             .fa.fa-users
             Users
-        .form-inline.my-2.my-lg-0
-          = form_tag(courses_path, method: :get) do
-            .input-group
+
+
+      .form-inline.my-2.my-lg-0
+        = form_tag(courses_path, method: :get) do
+          .input-group
             = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
             %span.input-group-append
               %button.btn.btn-primary.btn-sm{:type => "submit"}
@@ -33,6 +35,9 @@
           = link_to root_path, class: 'nav-link' do
             .fa.fa-home
             Another link
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+            Sign out
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             %b= current_user.email
