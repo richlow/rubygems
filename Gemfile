@@ -62,3 +62,4 @@ gem "faker"
 gem "devise"
 gem 'mini_racer', platforms: :ruby
 gem 'friendly_id', '~> 5.2.4'
+gem 'ransack'
