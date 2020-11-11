@@ -8,4 +8,17 @@ class Course < ApplicationRecord
     end
     extend FriendlyId
     friendly_id :title, use: :slugged
+    
+    LANGUAGES = [:"English", :"Russian", :"Polish"]
+    def self.languages
+        LANGUAGES.map { |language| [language, language] }
+    end
+    
+    LEVELS = [:"Beginner", :"Middle", :"Advanced"]
+    def self.levels
+        LEVELS.map { |level| [level, level] }
+    end
+    
+    include PublicActivity::Model
+    tracked owner: Proc.new{ |controller, model| controller.current_user }
 end

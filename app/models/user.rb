@@ -7,4 +7,10 @@ class User < ApplicationRecord
     email
   end
   has_many :courses
+  
+  def username
+    if email.present?
+        self.email.split(/@/).first
+    end
+  end
 end
